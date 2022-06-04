@@ -1,0 +1,68 @@
+// Mono-space font required
+{
+// Factory selection parameters
+"select": {
+	"air_map": 80,
+	"offset": [-20, 20],
+	// Speed factor: 8x8 ~ 0%, 24x24 ~ 40%
+	"speed": [0, 40],
+	"map": [8, 24],
+	"no_air": 3
+},
+
+// Utility param: warning on unit's total probability not equal to 100%
+"warn_probability": true,
+
+// Define factories
+"factory": {
+	"factorygunship": {
+		"importance": [12.0, 12.7],
+		"require_energy": false,
+
+		"income_tier": [16, 24, 32, 40, 56, 72, 85],
+		//             wasp,         blastwing,     gnat,         banshee,       rapier,         brawler,             blackdawn,        krow,          valkyrie,       vindicator,          trident
+		"unit":      ["gunshipcon", "gunshipbomb", "gunshipemp", "gunshipraid", "gunshipskirm", "gunshipheavyskirm", "gunshipassault", "gunshipkrow", "gunshiptrans", "gunshipheavytrans", "gunshipaa"],
+		"land": {
+			// 0-8m Opening - Blastwing and banshee Harass
+			"tier0": [ 0.20,         0.00,          0.00,         0.00,          0.78,           0.00,                0.02,             0.00,          0.00,           0.00,                0.00],
+			// 9-16m Early Game - Banshee with a chance of Blackdawn
+			"tier1": [ 0.10,         0.20,          0.00,         0.02,          0.45,           0.31,                0.02,             0.00,          0.00,           0.00,                0.00],
+			// 17-24m Expanding - Time to start a-makin Brawlers
+			"tier2": [ 0.10,         0.02,          0.00,         0.00,          0.04,           0.80,                0.04,             0.00,          0.00,           0.00,                0.00],
+			// 25-32m Expansions meet - Time to keep a-makin Brawlers
+			"tier3": [ 0.10,         0.05,          0.00,         0.00,          0.04,           0.73,                0.08,             0.00,          0.00,           0.00,                0.00],
+			// 33m -40m Solid Fronts - Brawlers with a chance of Krow
+			"tier4": [ 0.10,         0.04,          0.00,         0.00,          0.05,           0.70,                0.10,             0.01,          0.00,           0.00,                0.00],
+			// 41m - 56m Mid Game - Brawlers with a bigger chance of Krow
+			"tier5": [ 0.10,         0.05,          0.00,         0.00,          0.00,           0.77,                0.06,             0.02,          0.00,           0.00,                0.00],
+			// 57m - 72m Late Game - we must have 2 facs & Striders by now, go nuts!
+			"tier6": [ 0.10,         0.05,          0.00,         0.00,          0.00,           0.74,                0.07,             0.04,          0.00,           0.00,                0.00],
+			// 72m - inf+ Late late Game - Spam Krows!
+			"tier7": [ 0.10,         0.05,          0.00,         0.00,          0.00,           0.80,                0.00,             0.05,          0.00,           0.00,                0.00]
+		},
+		"caretaker": 6
+	},
+
+	"factoryplane": {
+		"importance": [15.0, 12.1],
+		"require_energy": false,
+
+		"income_tier": [30, 60],
+		//             crane,      swift,          hawk,                raven,        phoenix,      thunderbird,    wyvern,        vulture
+		"unit":      ["planecon", "planefighter", "planeheavyfighter", "bomberprec", "bomberriot", "bomberdisarm", "bomberheavy", "planescout"],
+		"air": {
+			// 0-10m Early Game
+			"tier0": [ 0.10,       0.00,           0.35,                0.15,         0.00,         0.00,           0.05,          0.05],
+			// 11-20m Expansion
+			"tier1": [ 0.10,       0.00,           0.41,                0.00,         0.02,         0.01,           0.24,          0.22]
+		},
+		"land": {
+			// 0-10m Early Game
+			"tier0": [ 0.10,       0.00,           0.00,                0.60,         0.05,         0.00,           0.20,          0.05],
+			// 11-20m Expansion
+			"tier1": [ 0.10,       0.00,           0.00,                0.05,         0.00,         0.00,           0.40,          0.45]
+		},
+		"caretaker": 60
+	}
+}
+}

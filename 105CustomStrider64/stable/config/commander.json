@@ -1,0 +1,68 @@
+// Mono-space font required
+{
+"commander": {
+	"prefix": "dyntrainer_",
+	"suffix": "_base",
+	"unit": {
+		"support": {
+			// Choice importance, 0 by default
+			"importance": 1.00,
+
+			// Starting units (order matters)
+			"start": {
+				"factory": {
+					"factoryplane": [
+						[0.5, ["builder", "builder", "builder", "builder"]],
+						[0.5, ["builder", "builder", "builder", "builder"]]
+					]// ,
+					// "striderhub": [
+					//	[0.5, ["builder", "builder", "anti_heavy", "snipe_target", "turtle", "support", "heavy"]],
+					//	[0.5, ["builder", "builder", "snipe_target", "anti_heavy", "heavy", "support", "turtle"]]
+					// ]
+				},
+				"default": ["builder", "builder", "builder"]
+			},
+
+			// Morph params
+			"upgrade": {
+				"time": 60,  // Force-morph delay, in seconds
+				"module": [  // List of dynamic module IDs
+					[14, 42],  // Heavy Particle Beam, Nano
+					[31, 42],  // Cloak, Nano
+					[15, 41, 40],  // sniper, range, speed
+					[42, 41, 40],  // Nano, range, speed
+					[29, 41, 40],  // jammer, range, speed
+					[42, 41, 40],  // Nano, range, speed
+					[42, 41, 40],  // Nano, range, speed
+					[42, 41, 40],  // Nano, range, speed
+					[42, 41, 40],  // Nano, range, speed
+					[42, 41, 40],  // Nano, range, speed
+					[32, 39, 39],  // area cloak, damage, damage
+					[39, 39, 39],  // damage
+					[39, 39, 39],  // damage
+					[37, 37, 37],  // health
+					[37, 37, 37],  // health
+					[37, 36, 36],  // health, regen
+					[36, 36, 36],  // regen
+					[36, 36, 36],  // regen
+					[38, 38, 38],  // high density
+					[38, 38, 38],  // high density				
+					[34, 34, 34],  // companion drones
+					[35, 35, 35],  // battle drones
+					[35, 35, 35],  // battle drones
+					[35, 35, 34],  // battle drones, companion drones
+					[34, 34, 34]   // companion drones
+				]
+			},
+
+			// Commander hides if ("time" elapsed) and ("threat" exceeds value or enemy has "air")
+			"hide": {
+				"time": 360,  // seconds
+				"threat": 30,
+				"air": true,
+				"task_rad": 1500.0
+			}
+		}
+	}
+}
+} 

@@ -1,0 +1,71 @@
+// Mono-space font required
+{
+"commander": {
+	"prefix": "dyntrainer_",
+	"suffix": "_base",
+	"unit": {
+		"support": {
+			// Choice importance, 0 by default
+			"importance": 0.25,
+
+			// Starting units (order matters)
+			"start": {
+				"factory": {
+					"factorygunship": [
+						[0.5, ["builder", "skirmish", "skirmish", "support", "skirmish", "skirmish"]],
+						[0.5, ["scout", "support", "builder","support", "skirmish", "skirmish", "support", "skirmish", "skirmish"]]
+					],
+					"factoryplane": [
+						[0.5, ["anti_air", "builder", "anti_air", "anti_air"]],
+						[0.5, ["anti_air", "builder", "anti_air", "builder"]]
+					],
+				},
+				"default": ["riot", "raider", "builder"]
+			},
+
+			// Morph params
+			"upgrade": {
+				"time": 420,  // Force-morph delay, in seconds
+				"module": [  // List of dynamic module IDs
+					[13, 42],  // shotgun
+					[31, 42],  // Cloak, Nano
+					[15, 41, 37],  // sniper, range, health
+					[34, 34, 34],  // companion drones
+					[35, 35, 35],  // battle drones
+					[35, 35, 35],  // battle drones
+					[35, 35, 34],  // battle drones, companion drones
+					[34, 34, 34],  // companion drones
+					[34, 40, 40],  // companion drones, speed
+					[40, 40, 40],  // speed
+					[40, 40, 40],  // speed
+					[37, 37, 37],  // health
+					[37, 37, 37],  // health
+					[37, 36, 36],  // health, regen
+					[36, 36, 36],  // regen
+					[36, 36, 36],  // regen
+					[42, 42, 42],  // nano
+					[42, 42, 42],  // nano
+					[42, 27, 29],  // nano, disruptor ammo, jammer
+					[32, 33, 30],  // area cloak, lazarus, radar
+					[41, 41, 41],  // range
+					[41, 41, 41],  // range
+					[41, 38, 38],  // range, high density
+					[38, 38, 38],  // high density
+					[38, 38, 38],  // high density
+					[39, 39, 39],  // damage
+					[39, 39, 39],  // damage
+					[39, 39]  // damage
+				]
+			},
+
+			// Commander hides if ("time" elapsed) and ("threat" exceeds value or enemy has "air")
+			"hide": {
+				"time": 360,  // seconds
+				"threat": 30,
+				"air": true,
+				"task_rad": 2000.0
+			}
+		}
+	}
+}
+} 
