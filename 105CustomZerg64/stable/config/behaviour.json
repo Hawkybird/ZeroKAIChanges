@@ -906,7 +906,7 @@
 		"thr_mod": 0.55
 	},
 	"staticantinuke": {
-		"role": ["static", "heavy", "support"],
+		"role": ["static", "heavy", "support", "snipe_target", "anti_heavy"],
 		"since": 720,
 		"limit": 1
 	},
