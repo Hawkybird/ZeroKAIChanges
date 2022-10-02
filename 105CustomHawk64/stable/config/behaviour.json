@@ -271,10 +271,10 @@
 		"pwr_mod": 1.4,
 		"thr_mod": 1.0
 	},
-	"amphtele": {
-		"role": ["transport"],
-		"limit": 0
-	},
+	// "amphtele": {
+	// 	"role": ["transport"],
+	// 	"limit": 1
+	// },
 	"amphaa": {
 		"role": ["anti_air"],
 		"attribute": ["melee", "ret_fight", "support"],
