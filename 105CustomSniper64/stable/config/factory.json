@@ -367,13 +367,13 @@
 		"require_energy": false,
 
 		"income_tier": [20, 60, 80, 100],
-		//             eos,       shockley,     inferno
-		"unit":      ["tacnuke", "empmissile", "napalmmissile"],
+		//             eos,       shockley,     inferno,		zeno
+		"unit":      ["tacnuke", "empmissile", "napalmmissile",	"missileslow"],
 		"land": {
-			"tier0": [ 0.09,     0.81,         0.00],
-			"tier1": [ 0.30,     0.70,         0.00],
-			"tier2": [ 0.60,     0.40,         0.00],
-			"tier3": [ 0.80,     0.20,         0.00]
+			"tier0": [ 0.09,     0.41,         0.00,			0.40],
+			"tier1": [ 0.30,     0.40,         0.00,			0.30],
+			"tier2": [ 0.60,     0.40,         0.00,			0.20],
+			"tier3": [ 0.60,     0.20,         0.00,			0.20]
 		},
 
 		"caretaker": 15

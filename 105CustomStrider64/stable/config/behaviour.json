@@ -1053,6 +1053,14 @@
 		// "pwr_mod": 100.00,
 		"thr_mod": 0.01
 	},
+	"missileslow": {
+		"role": ["anti_heavy", "super", "static", "snipe_target"],
+		"attribute": ["bomber", "support"],
+		// "limit": 2,
+		// "since": 600,
+		// "pwr_mod": 100.00,
+		"thr_mod": 0.01
+	},
 
 	// Chickens!! //
 	"dronecarry": {
