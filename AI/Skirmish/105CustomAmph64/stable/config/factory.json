@@ -1,0 +1,121 @@
+// Mono-space font required
+{
+// Factory selection parameters
+"select": {
+	"air_map": 80,
+	"offset": [-20, 20],
+	// Speed factor: 8x8 ~ 0%, 24x24 ~ 40%
+	"speed": [0, 40],
+	"map": [8, 24],
+	"no_air": 3
+},
+
+// Utility param: warning on unit's total probability not equal to 100%
+"warn_probability": true,
+
+// Define factories
+"factory": {
+	"factoryamph": {
+		"importance": [0.85, 1.0],
+		"require_energy": false,
+
+		"income_tier": [16, 24, 32, 40, 56, 72, 100],
+		//             conch,     duck,       archer,        buoy,          scallop,    grizzly,       djinn,      angler
+		"unit":      ["amphcon", "amphraid", "amphimpulse", "amphfloater", "amphriot", "amphassault", "amphtele", "amphaa"],
+		"land": {
+			// 0-8m Opening - Ducks and Archers
+			"tier0": [ 0.00,      0.53,       0.25,          0.20,          0.02,       0.00,          0.00,       0.00],
+			// 9-16m Early Game - Still mostly Ducks, Ducks are amazing
+			"tier1": [ 0.05,      0.10,       0.16,          0.47,          0.22,       0.00,          0.00,       0.00],
+			// 17-24m Expanding - Less Ducks, more Scallop/Bouy
+			"tier2": [ 0.10,      0.10,       0.09,          0.51,          0.15,       0.05,          0.00,       0.00],
+			// 25-32m Expansions meet - Time to start producing Bouy
+			"tier3": [ 0.15,      0.11,       0.02,          0.47,          0.12,       0.13,          0.00,       0.00],
+			// 33m -40m Solid Fronts - Time to start producing even more Bouy
+			"tier4": [ 0.16,      0.11,       0.02,          0.52,          0.04,       0.15,          0.00,       0.00],
+			// 41m - 56m Mid Game - Switch to Grizzly
+			"tier5": [ 0.20,      0.10,       0.02,          0.49,          0.02,       0.17,          0.00,       0.00],
+			// 57m - 72m Late Game -  MORE Grizzly
+			"tier6": [ 0.20,      0.10,       0.02,          0.48,          0.02,       0.18,          0.00,       0.00],
+			// 72m - inf+ Late late Game - SPAM GRIZZLY
+			"tier7": [ 0.20,      0.08,       0.02,          0.46,          0.02,       0.22,          0.00,       0.00]
+		},
+		"air": {
+			// 0-8m Opening - Ducks and Archers
+			"tier0": [ 0.00,      0.58,       0.25,          0.10,          0.02,       0.00,          0.00,       0.05],
+			// 9-16m Early Game - Still mostly Ducks, Ducks are amazing
+			"tier1": [ 0.05,      0.10,       0.11,          0.47,          0.22,       0.00,          0.00,       0.05],
+			// 17-24m Expanding - Less Ducks, more Scallop/Bouy
+			"tier2": [ 0.10,      0.11,       0.04,          0.53,          0.12,       0.05,          0.00,       0.05],
+			// 25-32m Expansions meet - Time to start producing Bouy
+			"tier3": [ 0.15,      0.11,       0.02,          0.42,          0.12,       0.13,          0.00,       0.05],
+			// 33m -40m Solid Fronts - Time to start producing even more Bouy
+			"tier4": [ 0.15,      0.10,       0.02,          0.49,          0.04,       0.15,          0.00,       0.05],
+			// 41m - 56m Mid Game - Switch to Grizzly
+			"tier5": [ 0.16,      0.13,       0.02,          0.45,          0.02,       0.17,          0.00,       0.05],
+			// 57m - 72m Late Game -  MORE Grizzly
+			"tier6": [ 0.20,      0.10,       0.02,          0.43,          0.02,       0.18,          0.00,       0.05],
+			// 72m - inf+ Late late Game - SPAM GRIZZLY
+			"tier7": [ 0.20,      0.08,       0.02,          0.41,          0.02,       0.22,          0.00,       0.05]
+		},
+		"caretaker": 6
+	},
+
+	"factoryship": {
+		"importance": [5.5, 5.5],
+		"require_energy": false,
+
+		"income_tier": [30],
+		//             mariner    cutter,      hunter,           seawolf,     corsair,    mistral,     siren,         ronin,      zephyr
+		"unit":      ["shipcon", "shipscout", "shiptorpraider", "subraider", "shipriot", "shipskirm", "shipassault", "shiparty", "shipaa"],
+		"water": {
+			"tier0": [ 0.05,      0.15,        0.35,             0.10,        0.10,       0.10,        0.15,          0.00,       0.00],
+			"tier1": [ 0.05,      0.05,        0.10,             0.10,        0.05,       0.10,        0.25,          0.25,       0.05]
+		},
+
+		"caretaker": 6
+	},
+
+	"striderhub": {
+		"importance": [0, 1.5],
+		"require_energy": false,
+
+		"income_tier": [60, 80, 100],
+		//             ultimatum,          scorpion,          dante,          catapult,      funnelweb,          bantha,          detriment,          scylla,          reef,          battleship,     athena
+		"unit":      ["striderantiheavy", "striderscorpion", "striderdante", "striderarty", "striderfunnelweb", "striderbantha", "striderdetriment", "subtacmissile", "shipcarrier", "shipheavyarty", "athena"],
+		"land": {
+			"tier0": [ 0.79,               0.01,              0.01,           0.01,          0.05,               0.01,            0.05,               0.00,            0.00,          0.00,           0.02],
+			"tier1": [ 0.74,               0.01,              0.01,           0.01,          0.10,               0.01,            0.10,               0.00,            0.00,          0.00,           0.02],
+			"tier2": [ 0.64,               0.01,              0.01,           0.01,          0.10,               0.01,            0.20,               0.00,            0.00,          0.00,           0.02],
+			"tier3": [ 0.54,               0.01,              0.01,           0.01,          0.10,               0.01,            0.30,               0.00,            0.00,          0.00,           0.02]
+		},
+		"water": {
+			"tier1": [ 0.50,               0.00,              0.00,           0.00,          0.00,               0.00,            0.00,               0.00,            0.23,          0.25,           0.02],
+			"tier2": [ 0.30,               0.00,              0.00,           0.00,          0.00,               0.00,            0.10,               0.10,            0.20,          0.28,           0.02]
+		},
+
+		"caretaker": 100
+	},
+
+	"staticmissilesilo": {
+		"importance": [0, 1.5],
+		"require_energy": false,
+
+		"income_tier": [20, 60, 80, 100],
+		//             eos,       shockley,     inferno,		zeno
+		"unit":      ["tacnuke", "empmissile", "napalmmissile",	missileslow],
+		"land": {
+			"tier0": [ 0.09,     0.10,         0.61,			0.20],
+			"tier1": [ 0.30,     0.20,         0.30,			0.20],
+			"tier2": [ 0.60,     0.25,         0.05,			0.10],
+			"tier3": [ 0.38,     0.20,         0.12,			0.30]
+		},
+		"water": {
+			"tier1": [ 0.25,     0.25,         0.25,			0.25],
+			"tier2": [ 0.41,     0.33,         0.01				0.25]
+		},
+
+		"caretaker": 15
+	}
+}
+}
